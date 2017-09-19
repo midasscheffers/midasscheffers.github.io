@@ -4,5 +4,62 @@
 }
 
 body{
-  background-color: rgb(25, 25, 50);
+  background-color: #222233;
+  font-family: 'VT323', monospace;
+  font-size: 200%;
+}
+
+header{
+  color: #ffc63c;
+  background-color: #ff9200;
+  text-align: center;
+  float: left;
+  width: 100%;
+}
+
+.middel{
+  clear: left;
+  float: left;
+}
+
+nav{
+  float: left;
+  background-color: #ff4900;
+  text-decoration: none;
+  color: #ff892a;
+  height: 100%;
+}
+
+nav li a:link{
+  color: #ff892a;
+  text-decoration: none;
+}
+
+nav li a:hover{
+  color: #ff9a2a;
+  text-decoration: none;
+}
+
+nav li a:active{
+  color: #ff892a;
+  text-decoration: none;
+}
+
+nav li a:visited{
+  color: #bb672a;
+  text-decoration: none;
+}
+
+section{
+  height: 100%;
+  float: left;
+  color: #999999;
+}
+
+footer{
+  text-align: center;
+  float: left;
+  clear: both;
+  width: 100%;
+  background-color: #333344;
 }
