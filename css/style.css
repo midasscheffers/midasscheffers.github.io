@@ -24,10 +24,10 @@ header{
 
 nav{
   float: left;
-  background-color: #ff4900;
-  text-decoration: none;
-  color: #ff892a;
+  width: 15%;
   height: 100%;
+  background-color: #ff4900;
+  color: #ff892a;
 }
 
 nav li a:link{
@@ -51,6 +51,8 @@ nav li a:visited{
 }
 
 section{
+  margin: 10px;
+  width: 75%;
   height: 100%;
   float: left;
   color: #999999;
