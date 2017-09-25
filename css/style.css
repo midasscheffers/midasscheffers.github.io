@@ -18,12 +18,14 @@ header{
 }
 
 .middel{
+  display: table;
+  width: 100%;
   clear: left;
   float: left;
 }
 
 nav{
-  float: left;
+  display: table-cell;
   width: 15%;
   height: 100%;
   background-color: #ff4900;
@@ -51,10 +53,10 @@ nav li a:visited{
 }
 
 section{
+  display: table-cell;
   margin: 10px;
   width: 75%;
   height: 100%;
-  float: left;
   color: #999999;
 }
 
