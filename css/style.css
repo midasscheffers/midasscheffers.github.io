@@ -36,7 +36,7 @@ nav li a:link{
 }
 
 nav li a:hover{
-  color: #ff9a2a;
+  color: #ffbd4c;
   text-decoration: none;
 }
 
@@ -46,7 +46,7 @@ nav li a:active{
 }
 
 nav li a:visited{
-  color: #bb672a;
+  color: #ff892a;
   text-decoration: none;
 }
 
