@@ -71,3 +71,20 @@ footer{
   width: 100%;
   background-color: #333344;
 }
+
+.credly__user > div > div {
+  background-color: #222233 !important;
+}
+
+.credly__user a {
+  background-color: #223 !important;
+  width: 100px !important;
+  height: 100px !important;
+  border-color: #223 !important;
+  border-radius: 15px 50px 30px 5px !important;
+}
+
+.credly__user a img {
+  width: 75px !important;
+  height: 75px !important;
+}
