@@ -10,9 +10,10 @@ body{
 }
 
 .wrapper{
-  width: 960px;
+  width: 1080px;
   margin: auto;
-  border-color: #112;
+  border-style: solid;
+  border-color: #112 !important;
   border-radius: 20px;
 }
 
