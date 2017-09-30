@@ -75,6 +75,15 @@ section{
   border-color: #112;
 }
 
+div.home_section p img{
+  float: left;
+  margin: 10px;
+}
+div.home_section p{
+  float: left;
+  margin: 10px;
+}
+
 article{
   border-color: #112;
   border-style: solid;
