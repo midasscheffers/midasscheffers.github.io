@@ -12,9 +12,6 @@ body{
 .wrapper{
   width: 1080px;
   margin: auto;
-  border-style: solid;
-  border-color: #112 !important;
-  border-radius: 20px;
 }
 
 header{
@@ -74,6 +71,18 @@ section{
   width: 75%;
   height: 100%;
   color: #999999;
+  border-style: solid;
+  border-color: #112;
+}
+
+article{
+  border-color: #112;
+  border-style: solid;
+  margin: 10px;
+}
+
+article h1{
+  background-color: #334;
 }
 
 figure{
