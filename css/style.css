@@ -85,6 +85,15 @@ article h1{
   background-color: #334;
 }
 
+article p {
+  margin: 10px;
+}
+
+article p img{
+  float: left;
+  margin: 10px;
+}
+
 figure{
   display: inline-block;
 }
