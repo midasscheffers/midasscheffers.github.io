@@ -3,7 +3,7 @@ var Snakes = [];
 void setup(){
   createCanvas(innerWidth, innerHeight);
   for(var i; i < 5; i++){
-    s = new Snake(random(50, 300), random(50, 300));
+    var s = new Snake(random(50, 300), random(50, 300));
     Snakes.push(s);
   }
 }
@@ -11,7 +11,9 @@ void setup(){
 void draw(){
   background(150)
   for(var i; i < Snakes.length; i++){
-    snake = Snakes[i];
+    var snake = Snakes[i];
     snake.draw();
   }
 }
+
+console.log("hoi");
