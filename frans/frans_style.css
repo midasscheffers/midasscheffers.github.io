@@ -4,26 +4,70 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body{
+    background-image: url("bg.jpg");
+    filter: alpha(opacity=100);
+    background-color: #cccccc;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
 header{
-    text-align: center;
     font-size: 300%;
-    background-color: blue;
+    color: #eee;
+    background-color: rgb(0, 0, 0, .5);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#topHeader{
+    font-weight: normal;
+}
+
+
+.wrapper{
+    display: flex;
+    justify-content: center;
 }
 
 section{
-    width: 700px;
+    opacity: 1;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    
+    width: 1000px;
 }
 
 article{
-    background-color: rgb(255, 50, 0);
+    background-color: rgba(0, 0, 0, .7);
+    color: white;
+    text-align: left;
+    opacity: 1;;
     border: 5px white solid;
+    margin: 10px;
+    
 }
 
 article header{
-    text-align: left;
+    background-color: rgba(0, 0, 0, 0);
     font-size: 250%;
+    justify-content: left;
+}
+
+article p{
+    padding: 5px;
+}
+
+img.left{
+    float: left;
+    margin: 10px;
+}
+
+img.right{
+    float: right;
+    margin: 10px;
 }
