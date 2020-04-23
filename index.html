@@ -5,10 +5,11 @@
     <style>
     @import url('https://fonts.googleapis.com/css?family=VT323');
     </style>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" id="css_link">
+    <script type="text/javascript" src="css_flip.js"></script>
     <title>home</title>
   </head>
-  <body>
+  <body onload="set_css_state()">
     <div class="wrapper">
       <header>
         <h1>My Portfolio</h1>
@@ -42,6 +43,12 @@
               Purple is a nice color.
               And spaghetti is delicious.
             </p>
+            <br>
+            <!--
+              <button onclick="flip_css()">
+                <p id='flip_button_text'>change style to new</p>
+              </button>
+            -->
           </div>
         </section>
       </div>
