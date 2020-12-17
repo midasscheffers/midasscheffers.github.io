@@ -47,7 +47,7 @@ function draw() {
 
   pieces.forEach(p => {
     p.blit();
-    image(black_pon_image, p.x*spacing-halfBoard+halfSpace, p.y*spacing-halfBoard+halfSpace, 40, 40);
+    image(black_pon_img, p.x*spacing-halfBoard+halfSpace, p.y*spacing-halfBoard+halfSpace, 40, 40);
     if (CheckIfSelected(p)){
       pieces.forEach(j => {
         j.isSelected = false
