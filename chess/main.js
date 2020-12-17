@@ -16,9 +16,9 @@ var brownTurn = true;
 
 var pieces = [];
 
-pieces.push(Pon(1, 0, "black"));
-pieces.push(Pon(6, 0, "white"));
-pieces.push(Rook(4,4, "white"))
+pieces.push(new Pon(1, 0, "black"));
+pieces.push(new Pon(6, 0, "white"));
+pieces.push(new Rook(4,4, "white"))
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight-4);
