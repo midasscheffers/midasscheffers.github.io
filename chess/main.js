@@ -94,6 +94,6 @@ function CheckIfSelected(pon){
 
 function loadPieceImages(pieces){
   pieces.forEach(p => {
-    p.img = loadImage("Images/" + this.color + "_" + this.piece + ".png");
+    p.img = loadImage("Images/" + p.color + "_" + p.piece + ".png");
   })
 }
