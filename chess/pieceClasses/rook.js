@@ -14,7 +14,7 @@ class Rook extends Piece{
       rectMode(CORNER)
     }
     fill(200, 230, 180);
-    ellipse(this.x*spacing-halfBoard+halfSpace, this.y*spacing-halfBoard+halfSpace, 40, 40);
+    image(this.image, this.x*spacing-halfBoard, this.y*spacing-halfBoard, spacing, spacing);
   }
 
 }

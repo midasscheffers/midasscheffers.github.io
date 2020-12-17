@@ -13,19 +13,12 @@ var BrownPieces = [];
 
 var brownTurn = true;
 
-pon = new Pon(0,0, "black");
-// pon.image = black_pon_img;
-pon1 = new Pon(1,0, "black");
-// pon1.image =black_pon_img;
 
 var pieces = [];
-pieces.push(pon);
-pieces.push(pon1);
 
-// function preload(){
-//   black_pon_img = loadImage("Images/black_pon.png");
-// }
-
+pieces.push(Pon(1, 0, "black"));
+pieces.push(Pon(6, 0, "white"));
+pieces.push(Rook(4,4, "white"))
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight-4);
