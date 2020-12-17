@@ -12,11 +12,19 @@ var WhitePieces = [];
 var BrownPieces = [];
 
 var brownTurn = true;
-var black_pon_img;
 
-function preload(){
-  black_pon_img = loadImage("Images/black_pon.png");
-}
+pon = new Pon(0,0, "black");
+// pon.image = black_pon_img;
+pon1 = new Pon(1,0, "black");
+// pon1.image =black_pon_img;
+
+var pieces = [];
+pieces.push(pon);
+pieces.push(pon1);
+
+// function preload(){
+//   black_pon_img = loadImage("Images/black_pon.png");
+// }
 
 
 function setup() {
@@ -27,17 +35,10 @@ function setup() {
   halfSpace = spacing/2;
   halfBoard = boardSize/2
 
+
+  loadPieceImages(pieces)
 }
 
-
-pon = new Pon(0,0, "black")
-// pon.image = black_pon_img;
-pon1 = new Pon(1,0, "black")
-// pon1.image =black_pon_img;
-
-pieces = []
-pieces.push(pon)
-pieces.push(pon1)
 
 function draw() {
 
@@ -47,7 +48,6 @@ function draw() {
 
   pieces.forEach(p => {
     p.blit();
-    // image(black_pon_img, p.x*spacing-halfBoard, p.y*spacing-halfBoard, spacing, spacing);
     if (CheckIfSelected(p)){
       pieces.forEach(j => {
         j.isSelected = false
@@ -92,6 +92,8 @@ function CheckIfSelected(pon){
   return false
 }
 
-function loadImages(){
-
+function loadPieceImages(pieces){
+  pieces.forEach(p => {
+    p.img = loadImage("Images/" + this.color + "_" + this.piece + ".png");
+  })
 }
