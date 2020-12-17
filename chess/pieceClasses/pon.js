@@ -16,7 +16,7 @@ class Pon extends Piece{
       rectMode(CORNER)
     }
     fill(0);
-    // image(this.image, this.x*spacing-halfBoard+halfSpace, this.y*spacing-halfBoard+halfSpace, 40, 40);
+    image(black_pon_img, p.x*spacing-halfBoard, p.y*spacing-halfBoard, spacing, spacing);
   }
 
 }
