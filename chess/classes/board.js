@@ -115,6 +115,7 @@ class Board{
                 }
                 else{
                     this.placePiece(xIncrement, y, line[i])
+                    xIncrement ++;
                 }
             }
 
