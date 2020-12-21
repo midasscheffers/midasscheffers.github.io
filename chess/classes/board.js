@@ -17,13 +17,15 @@ class Board{
         this.players.push(new Player("white", "bottom"));
         this.players.push(new Player("black", "top"));
         for (var i; i < 8; i ++){
-          this.players[0].pieces.push(new Pon(i, 0, this.players[0].color))
+            po = new Pon(i, 0, this.players[0].color);
+            console.log(po);
+            this.players[0].pieces.push(po)
         }
     }
     
     rotateTurn(){
         this.playersTurn += 1;
-        if (this.playersTurn >= length(this.players)){
+        if (this.playersTurn >= this.players.length()){
             this.playersTurn = 0;
         }
     }
