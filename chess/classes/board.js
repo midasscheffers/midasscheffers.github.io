@@ -11,6 +11,7 @@ class Board{
         this.light = [205,158,116];
         this.selection_color = [240, 229, 144, 130];
         this.strokeSize = 3;
+        this.charList = ["a", "b", "c", "d", "e", "f", "g", "h"]
     }
 
     setUpBoard(){
@@ -93,7 +94,25 @@ class Board{
 
     //checks for checks and mates and pats
     loadFEN(FEN){
-        cutFEN = FEN.splice("/");
+        cutFEN = FEN.splice(" ");
         console.log(cutFEN)
+        nextMove = cutFEN[1];
+    }
+
+    getFEN(){
+        var FEN = ""
+        return FEN
+    }
+
+    xyToChessCord(x, y){
+        var rank = (8-y).toString();
+        var file = this.charList[x];
+        return (file+rank);
+    }
+    xyToChessCord(cord){
+        cutCord = cord.splice("");
+        y = 8-Math.round(cutCord[1]);
+        x = indexOf(cutCord[0]);
+        return [x, y]
     }
 }
