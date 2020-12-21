@@ -13,7 +13,14 @@ class Board{
         this.strokeSize = 3;
     }
 
-
+    setUpBoard(){
+        this.players.push(new Player("white", "bottom"));
+        this.players.push(new Player("black", "top"));
+        for (var i; i < 8; i ++){
+          this.players[0].pieces.push(new Pon(i, 0, this.players[0].color))
+        }
+    }
+    
     rotateTurn(){
         this.playersTurn += 1;
         if (this.playersTurn >= length(this.players)){
@@ -35,7 +42,7 @@ class Board{
                 }
                 else{
                     if(x%2 != 1){
-                    fill(brown)
+                    fill(this.brown)
                     rect(x*this.spacing-this.halfBoard, y*this.spacing-this.halfBoard, this.spacing, this.spacing)
                     }
                 }
