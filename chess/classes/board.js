@@ -19,6 +19,9 @@ class Board{
         for (var i = 0; i < 8; i ++){
             this.players[0].pieces.push(new Pon(i, 6, this.players[0].color))
         }
+        for (var i = 0; i < 8; i ++){
+            this.players[1].pieces.push(new Pon(i, 1, this.players[1].color))
+        }
         this.loadPieceImages()
     }
     
