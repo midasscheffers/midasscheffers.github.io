@@ -1,8 +1,7 @@
 class Board{
     constructor(){
         this.size = 8;
-        this.pieces;
-        this.players;
+        this.players = [];
         this.playersTurn = 0;
         this.boardSize = height/1.5;
         this.spacing = this.boardSize/8;
@@ -14,13 +13,6 @@ class Board{
         this.strokeSize = 3;
     }
 
-    setUpBoard(){
-        this.players.push(new Player("white", "bottom"));
-        this.players.push(new Player("black", "top"));
-        for (var i; i < 8; i ++){
-            this.players[0].pieces.push(new Pon(i, 0, this.players[0].color))
-        }
-    }
 
     rotateTurn(){
         this.playersTurn += 1;
