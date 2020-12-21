@@ -1,4 +1,4 @@
-class Kight extends Piece{
+class Knight extends Piece{
 
   constructor(x, y, color) {
     super(x,y, color)
