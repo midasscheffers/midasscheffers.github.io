@@ -12,6 +12,9 @@ class Board{
         this.selection_color = [240, 229, 144, 130];
         this.strokeSize = 3;
         this.charList = ["a", "b", "c", "d", "e", "f", "g", "h"]
+        this.fullMoves = 0;
+        this.halfMoves = 0;
+        this.moves = [];
     }
 
     setUpBoard(){
@@ -41,8 +44,8 @@ class Board{
         this.players[1].pieces.push(new Knight(6, 0, this.players[1].color))
         this.players[1].pieces.push(new Bishop(2, 0, this.players[1].color))
         this.players[1].pieces.push(new Bishop(5, 0, this.players[1].color))
+        // this.loadFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
         this.loadPieceImages();
-        this.loadFEN();
     }
     
     rotateTurn(){
@@ -94,9 +97,28 @@ class Board{
 
     //checks for checks and mates and pats
     loadFEN(FEN){
-        cutFEN = FEN.split(" ");
-        console.log(cutFEN)
-        nextMove = cutFEN[1];
+        this.players[0].pieces = [];
+        this.players[1].pieces = [];
+        var cutFEN = FEN.split(" ");
+        var nextMove = cutFEN[1];
+        var caslingOpertunities = cutFEN[2];
+        var enpassantOppertunities = cutFEN[3];
+        var halfMoves = cutFEN[3];
+        var fullMoves = cutFEN[4];
+        var boardState = cutFEN[0].split("/");
+        for (var y = 0; y < boardState.length(); y++){
+            var line = boardState[y].split("");
+            var xIncrement = 0;
+            for (var i = 0; i < line.length(); i++){
+                try{
+                    xIncrement += Math.round(line[i]);
+                }
+                catch{
+                    placePiece(x, y, line[i])
+                }
+            }
+
+        }
     }
 
     getFEN(){
@@ -110,9 +132,50 @@ class Board{
         return (file+rank);
     }
     cordToXY(cord){
-        cutCord = cord.split("");
+        var cutCord = cord.split("");
         var y = 8-Math.round(cutCord[1]);
-        var x = indexOf(cutCord[0]);
+        var x = this.charList.indexOf(cutCord[0]);
         return [x, y]
+    }
+
+    placePiece(x, y, pieceChar){
+        //blacks pieces
+        if (pieceChar == 'P'){
+            this.players[0].pieces.push(new Pon(x, y, this.players[0].color, this.players[0].side));
+        }
+        else if (pieceChar == 'K'){
+            this.players[0].pieces.push(new King(x, y, this.players[0].color));
+        }
+        else if (pieceChar == 'Q'){
+            this.players[0].pieces.push(new Queen(x, y, this.players[0].color));
+        }
+        else if (pieceChar == 'B'){
+            this.players[0].pieces.push(new Bishop(x, y, this.players[0].color));
+        }
+        else if (pieceChar == 'N'){
+            this.players[0].pieces.push(new Knight(x, y, this.players[0].color));
+        }
+        else if (pieceChar == 'R'){
+            this.players[0].pieces.push(new Rook(x, y, this.players[0].color));
+        }
+        //white pieces
+        else if (pieceChar == 'p'){
+            this.players[1].pieces.push(new Pon(x, y, this.players[1].color, this.players[1].side));
+        }
+        else if (pieceChar == 'k'){
+            this.players[1].pieces.push(new King(x, y, this.players[1].color));
+        }
+        else if (pieceChar == 'q'){
+            this.players[1].pieces.push(new Queen(x, y, this.players[1].color));
+        }
+        else if (pieceChar == 'b'){
+            this.players[1].pieces.push(new Bishop(x, y, this.players[1].color));
+        }
+        else if (pieceChar == 'n'){
+            this.players[1].pieces.push(new Knight(x, y, this.players[1].color));
+        }
+        else if (pieceChar == 'r'){
+            this.players[1].pieces.push(new Rook(x, y, this.players[1].color));
+        }
     }
 }

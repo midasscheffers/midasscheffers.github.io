@@ -3,5 +3,6 @@ class Player{
         this.color = color;
         this.side = side;
         this.pieces = [];
+        this.capuredPieces = [];
     }
 }
