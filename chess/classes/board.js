@@ -16,11 +16,10 @@ class Board{
     setUpBoard(){
         this.players.push(new Player("white", "bottom"));
         this.players.push(new Player("black", "top"));
-        for (var i; i < 8; i ++){
-            po = new Pon(i, 0, this.players[0].color);
-            console.log(po);
-            this.players[0].pieces.push(po)
+        for (var i = 0; i < 8; i ++){
+            this.players[0].pieces.push(new Pon(i, 6, this.players[0].color))
         }
+        this.loadPieceImages()
     }
     
     rotateTurn(){
