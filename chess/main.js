@@ -4,7 +4,7 @@ var gameBoard;
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight-4);
   gameBoard = new Board();
-  gameBoard.setUpBoard();
+  setUpBoard(gameBoard);
   gameBoard.loadPieceImages();
 }
 
@@ -28,3 +28,10 @@ function draw() {
 // }
 
 
+function setUpBoard(gameBoard){
+  gameBoard.players.push(new Player("white", "bottom"));
+  gameBoard.players.push(new Player("black", "top"));
+  for (var i; i < 8; i ++){
+    gameBoard.players[0].pieces.push(new Pon(i, 0, gameBoard.players[0].color))
+  }
+}
