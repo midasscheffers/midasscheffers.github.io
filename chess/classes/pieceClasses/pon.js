@@ -7,8 +7,7 @@ class Pon extends Piece{
     this.points = 1;
   }
 
-  blit(){
-    
+  blit(spacing, halfBoard, halfSpace){
     if (this.isSelected){
       rectMode(CENTER);
       fill(selection_color)
