@@ -18,7 +18,7 @@ class Board{
         this.players.push(new Player("white", "bottom"));
         this.players.push(new Player("black", "top"));
         for (var i; i < 8; i ++){
-            this.players[0].push(new Pon(i, 0, this.players[0].color))
+            this.players[0].pieces.push(new Pon(i, 0, this.players[0].color))
         }
     }
 
