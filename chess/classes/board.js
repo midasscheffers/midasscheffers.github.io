@@ -50,7 +50,7 @@ class Board{
     
     rotateTurn(){
         this.playersTurn += 1;
-        if (this.playersTurn >= this.players.length()){
+        if (this.playersTurn >= this.players.length){
             this.playersTurn = 0;
         }
     }
@@ -106,14 +106,14 @@ class Board{
         var halfMoves = cutFEN[3];
         var fullMoves = cutFEN[4];
         var boardState = cutFEN[0].split("/");
-        for (var y = 0; y < boardState.length(); y++){
+        for (var y = 0; y < boardState.length; y++){
             var line = boardState[y].split("");
             var xIncrement = 0;
-            for (var i = 0; i < line.length(); i++){
-                try{
+            for (var i = 0; i < line.length; i++){
+                if (typeof Math.round(line[i]) == 'number'){
                     xIncrement += Math.round(line[i]);
                 }
-                catch{
+                else{
                     placePiece(x, y, line[i])
                 }
             }
