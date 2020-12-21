@@ -9,6 +9,7 @@ class Board{
         this.halfSpace = this.spacing/2;
         this.brown = [109,60,52];
         this.light = [205,158,116];
+        this.boardColors = [this.light, this.brown]
         this.selection_color = [240, 229, 144, 130];
         this.strokeSize = 3;
         this.charList = ["a", "b", "c", "d", "e", "f", "g", "h"]
@@ -35,20 +36,11 @@ class Board{
         fill(this.light);
         noStroke();
         rect(-this.halfBoard, -this.halfBoard, this.boardSize, this.boardSize);
+        
         for (var y = 0; y < 8; y++){
             for (var x = 0; x < 8; x++){
-                if (y % 2 == 0){
-                    if (x%2 == 1){
-                    fill(this.brown)
-                    rect(x*this.spacing-this.halfBoard, y*this.spacing-this.halfBoard, this.spacing, this.spacing)
-                    }
-                }
-                else{
-                    if(x%2 != 1){
-                    fill(this.brown)
-                    rect(x*this.spacing-this.halfBoard, y*this.spacing-this.halfBoard, this.spacing, this.spacing)
-                    }
-                }
+                fill(this.boardColors[((x+y)%2)])
+                rect(x*this.spacing-this.halfBoard, y*this.spacing-this.halfBoard, this.spacing, this.spacing)
             }
         }
         this.blitPieces();
