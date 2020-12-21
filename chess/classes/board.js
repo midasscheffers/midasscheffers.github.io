@@ -32,14 +32,14 @@ class Board{
         this.players[0].pieces.push(new Bishop(2, 7, this.players[0].color))
         this.players[0].pieces.push(new Bishop(5, 7, this.players[0].color))
         // pieces for black
-        this.players[1].pieces.push(new King(4, 7, this.players[1].color))
-        this.players[1].pieces.push(new Queen(3, 7, this.players[1].color))
-        this.players[1].pieces.push(new Rook(0, 7, this.players[1].color))
-        this.players[1].pieces.push(new Rook(7, 7, this.players[1].color))
-        this.players[1].pieces.push(new Knight(1, 7, this.players[1].color))
-        this.players[1].pieces.push(new Knight(6, 7, this.players[1].color))
-        this.players[1].pieces.push(new Bishop(2, 7, this.players[1].color))
-        this.players[1].pieces.push(new Bishop(5, 7, this.players[1].color))
+        this.players[1].pieces.push(new King(4, 0, this.players[1].color))
+        this.players[1].pieces.push(new Queen(3, 0, this.players[1].color))
+        this.players[1].pieces.push(new Rook(0, 0, this.players[1].color))
+        this.players[1].pieces.push(new Rook(7, 0, this.players[1].color))
+        this.players[1].pieces.push(new Knight(1, 0, this.players[1].color))
+        this.players[1].pieces.push(new Knight(6, 0, this.players[1].color))
+        this.players[1].pieces.push(new Bishop(2, 0, this.players[1].color))
+        this.players[1].pieces.push(new Bishop(5, 0, this.players[1].color))
         this.loadPieceImages()
     }
     
