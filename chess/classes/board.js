@@ -20,31 +20,7 @@ class Board{
     setUpBoard(){
         this.players.push(new Player("white", "bottom"));
         this.players.push(new Player("black", "top"));
-        for (var i = 0; i < 8; i ++){
-            this.players[0].pieces.push(new Pon(i, 6, this.players[0].color, this.players[0].side))
-        }
-        for (var i = 0; i < 8; i ++){
-            this.players[1].pieces.push(new Pon(i, 1, this.players[1].color, this.players[0].side))
-        }
-        // pieces for white
-        this.players[0].pieces.push(new King(4, 7, this.players[0].color))
-        this.players[0].pieces.push(new Queen(3, 7, this.players[0].color))
-        this.players[0].pieces.push(new Rook(0, 7, this.players[0].color))
-        this.players[0].pieces.push(new Rook(7, 7, this.players[0].color))
-        this.players[0].pieces.push(new Knight(1, 7, this.players[0].color))
-        this.players[0].pieces.push(new Knight(6, 7, this.players[0].color))
-        this.players[0].pieces.push(new Bishop(2, 7, this.players[0].color))
-        this.players[0].pieces.push(new Bishop(5, 7, this.players[0].color))
-        // pieces for black
-        this.players[1].pieces.push(new King(4, 0, this.players[1].color))
-        this.players[1].pieces.push(new Queen(3, 0, this.players[1].color))
-        this.players[1].pieces.push(new Rook(0, 0, this.players[1].color))
-        this.players[1].pieces.push(new Rook(7, 0, this.players[1].color))
-        this.players[1].pieces.push(new Knight(1, 0, this.players[1].color))
-        this.players[1].pieces.push(new Knight(6, 0, this.players[1].color))
-        this.players[1].pieces.push(new Bishop(2, 0, this.players[1].color))
-        this.players[1].pieces.push(new Bishop(5, 0, this.players[1].color))
-        // this.loadFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
+        this.loadFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
         this.loadPieceImages();
     }
     
@@ -101,10 +77,16 @@ class Board{
         this.players[1].pieces = [];
         var cutFEN = FEN.split(" ");
         var nextMove = cutFEN[1];
+        if (nextMove == "b"){
+            this.playersTurn = 1;
+        }
+        else {
+            this.playersTurn = 0;
+        }
         var caslingOpertunities = cutFEN[2];
         var enpassantOppertunities = cutFEN[3];
-        var halfMoves = cutFEN[3];
-        var fullMoves = cutFEN[4];
+        this.halfMoves = cutFEN[3];
+        this.fullMoves = cutFEN[4];
         var boardState = cutFEN[0].split("/");
         for (var y = 0; y < boardState.length; y++){
             var line = boardState[y].split("");

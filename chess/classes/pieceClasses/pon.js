@@ -7,6 +7,7 @@ class Pon extends Piece{
     this.points = 1;
     this.side = side;
     this.firstMove = true;
+    this.enpassent_squere = '';
   }
 
   blit(spacing, halfBoard, halfSpace){
