@@ -1,10 +1,12 @@
 class Pon extends Piece{
 
-  constructor(x, y, color) {
+  constructor(x, y, color, side) {
     super(x,y, color)
     this.piece = "pon";
     this.image = '';
     this.points = 1;
+    this.side = side;
+    this.firstMove = true;
   }
 
   blit(spacing, halfBoard, halfSpace){

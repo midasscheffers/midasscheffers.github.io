@@ -17,11 +17,29 @@ class Board{
         this.players.push(new Player("white", "bottom"));
         this.players.push(new Player("black", "top"));
         for (var i = 0; i < 8; i ++){
-            this.players[0].pieces.push(new Pon(i, 6, this.players[0].color))
+            this.players[0].pieces.push(new Pon(i, 6, this.players[0].color, this.players[0].side))
         }
         for (var i = 0; i < 8; i ++){
-            this.players[1].pieces.push(new Pon(i, 1, this.players[1].color))
+            this.players[1].pieces.push(new Pon(i, 1, this.players[1].color, this.players[0].side))
         }
+        // pieces for white
+        this.players[0].pieces.push(new King(4, 7, this.players[0].color))
+        this.players[0].pieces.push(new Queen(3, 7, this.players[0].color))
+        this.players[0].pieces.push(new Rook(0, 7, this.players[0].color))
+        this.players[0].pieces.push(new Rook(7, 7, this.players[0].color))
+        this.players[0].pieces.push(new Knight(1, 7, this.players[0].color))
+        this.players[0].pieces.push(new Knight(6, 7, this.players[0].color))
+        this.players[0].pieces.push(new Bishop(2, 7, this.players[0].color))
+        this.players[0].pieces.push(new Bishop(5, 7, this.players[0].color))
+        // pieces for black
+        this.players[1].pieces.push(new King(4, 7, this.players[1].color))
+        this.players[1].pieces.push(new Queen(3, 7, this.players[1].color))
+        this.players[1].pieces.push(new Rook(0, 7, this.players[1].color))
+        this.players[1].pieces.push(new Rook(7, 7, this.players[1].color))
+        this.players[1].pieces.push(new Knight(1, 7, this.players[1].color))
+        this.players[1].pieces.push(new Knight(6, 7, this.players[1].color))
+        this.players[1].pieces.push(new Bishop(2, 7, this.players[1].color))
+        this.players[1].pieces.push(new Bishop(5, 7, this.players[1].color))
         this.loadPieceImages()
     }
     
@@ -71,4 +89,6 @@ class Board{
             });
         });
     }
+
+    //checks for checks and mates and pats
 }
