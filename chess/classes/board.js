@@ -94,7 +94,7 @@ class Board{
 
     //checks for checks and mates and pats
     loadFEN(FEN){
-        cutFEN = FEN.splice(" ");
+        cutFEN = FEN.split(" ");
         console.log(cutFEN)
         nextMove = cutFEN[1];
     }
@@ -109,10 +109,10 @@ class Board{
         var file = this.charList[x];
         return (file+rank);
     }
-    xyToChessCord(cord){
-        cutCord = cord.splice("");
-        y = 8-Math.round(cutCord[1]);
-        x = indexOf(cutCord[0]);
+    cordToXY(cord){
+        cutCord = cord.split("");
+        var y = 8-Math.round(cutCord[1]);
+        var x = indexOf(cutCord[0]);
         return [x, y]
     }
 }
