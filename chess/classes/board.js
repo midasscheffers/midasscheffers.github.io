@@ -110,15 +110,16 @@ class Board{
             var line = boardState[y].split("");
             var xIncrement = 0;
             for (var i = 0; i < line.length; i++){
-                if (typeof Math.round(line[i]) == 'number'){
+                if (Number.isInteger(parseInt(line[i]))){
                     xIncrement += Math.round(line[i]);
                 }
                 else{
-                    placePiece(x, y, line[i])
+                    this.placePiece(xIncrement, y, line[i])
                 }
             }
 
         }
+        this.loadPieceImages();
     }
 
     getFEN(){
