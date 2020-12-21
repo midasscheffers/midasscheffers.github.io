@@ -6,7 +6,7 @@ class King extends Piece{
     this.points = 0;
   }
 
-  blit(){
+  blit(spacing, halfBoard, halfSpace){
     if (this.isSelected){
       rectMode(CENTER);
       fill(selection_color)

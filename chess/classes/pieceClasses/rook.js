@@ -6,7 +6,7 @@ class Rook extends Piece{
     this.points = 5;
   }
 
-  blit(){
+  blit(spacing, halfBoard, halfSpace){
     if (this.isSelected){
       rectMode(CENTER);
       fill(selection_color)

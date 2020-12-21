@@ -6,7 +6,7 @@ class Knight extends Piece{
     this.points = 3;
   }
 
-  blit(){
+  blit(spacing, halfBoard, halfSpace){
     if (this.isSelected){
       rectMode(CENTER);
       fill(selection_color)

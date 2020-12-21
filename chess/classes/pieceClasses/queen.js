@@ -6,7 +6,7 @@ class Queen extends Piece{
     this.points = 9;
   }
 
-  blit(){
+  blit(spacing, halfBoard, halfSpace){
     if (this.isSelected){
       rectMode(CENTER);
       fill(selection_color)
