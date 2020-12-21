@@ -40,7 +40,8 @@ class Board{
         this.players[1].pieces.push(new Knight(6, 0, this.players[1].color))
         this.players[1].pieces.push(new Bishop(2, 0, this.players[1].color))
         this.players[1].pieces.push(new Bishop(5, 0, this.players[1].color))
-        this.loadPieceImages()
+        this.loadPieceImages();
+        this.loadFEN();
     }
     
     rotateTurn(){
@@ -91,4 +92,8 @@ class Board{
     }
 
     //checks for checks and mates and pats
+    loadFEN(FEN){
+        cutFEN = FEN.splice("/");
+        console.log(cutFEN)
+    }
 }
