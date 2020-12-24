@@ -7,10 +7,10 @@ class Pon extends Piece{
     this.points = 1;
     this.side = side;
     if (this.side == "top"){
-      this.dir = -1;
+      this.dir = 1;
     }
     else{
-      this.dir = 1;
+      this.dir = -1;
     }
     this.firstMove = true;
     this.enpassent_squere = '';
@@ -39,7 +39,7 @@ class Pon extends Piece{
       moveSqueres.push([this.x-1, this.y+this.dir]);
     }
     var sq_dig_right = boardState[this.y+this.dir][this.x+1]
-    if (sq_dig_left != "-" && this.cordOnBoard(this.x+1, this.y+this.dir)){
+    if (sq_dig_right != "-" && this.cordOnBoard(this.x+1, this.y+this.dir)){
       moveSqueres.push([this.x+1, this.y+this.dir]);
     }
     this.moveSqueres = moveSqueres;
