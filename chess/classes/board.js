@@ -157,7 +157,7 @@ class Board{
     }
 
     CheckForSelected(){
-        this.players[this.playersTurn].forEach(piece =>{
+        this.players[this.playersTurn].pieces.forEach(piece =>{
             var mouseTransPosX = mouseX-(width/2 - halfBoard + halfSpace);
             var mouseTransPosY = mouseY-(height/2-halfBoard + halfSpace);
             if (mouseTransPosX > pon.x*spacing-halfSpace && mouseTransPosY > pon.y*spacing-halfSpace && mouseTransPosX < pon.x*spacing+halfSpace && mouseTransPosY < pon.y*spacing+halfSpace){
