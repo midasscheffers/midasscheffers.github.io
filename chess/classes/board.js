@@ -19,6 +19,7 @@ class Board{
     }
 
     setUpBoard(){
+        this.players = []
         this.players.push(new Player("white", "bottom"));
         this.players.push(new Player("black", "top"));
         this.loadFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
@@ -77,8 +78,8 @@ class Board{
         }
         var caslingOpertunities = cutFEN[2];
         var enpassantOppertunities = cutFEN[3];
-        this.halfMoves = cutFEN[3];
-        this.fullMoves = cutFEN[4];
+        this.halfMoves = Math.round(cutFEN[3]);
+        this.fullMoves = Math.round(cutFEN[4]);
         var boardState = cutFEN[0].split("/");
         for (var y = 0; y < boardState.length; y++){
             var line = boardState[y].split("");
@@ -153,5 +154,17 @@ class Board{
         else if (pieceChar == 'r'){
             this.players[1].pieces.push(new Rook(x, y, this.players[1].color));
         }
+    }
+
+    CheckForSelected(){
+        this.players[this.playersTurn].forEach(piece =>{
+            var mouseTransPosX = mouseX-(width/2 - halfBoard + halfSpace);
+            var mouseTransPosY = mouseY-(height/2-halfBoard + halfSpace);
+            if (mouseTransPosX > pon.x*spacing-halfSpace && mouseTransPosY > pon.y*spacing-halfSpace && mouseTransPosX < pon.x*spacing+halfSpace && mouseTransPosY < pon.y*spacing+halfSpace){
+                if (mouseIsPressed){
+                piece.isSelected = true;
+                }
+            }
+        });
     }
 }
