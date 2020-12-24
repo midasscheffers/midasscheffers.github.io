@@ -35,7 +35,7 @@ class Pon extends Piece{
       }
     }
     var sq_dig_left = boardState[this.y+this.dir][this.x-1]
-    if (sq_dig_left != "-" && this.cordOnBoard(this.x-1, this.y+this.dir) && this.charIsOppColor(sq_dig_right)){
+    if (sq_dig_left != "-" && this.cordOnBoard(this.x-1, this.y+this.dir) && this.charIsOppColor(sq_dig_left)){
       moveSqueres.push([this.x-1, this.y+this.dir]);
     }
     var sq_dig_right = boardState[this.y+this.dir][this.x+1]
