@@ -160,11 +160,20 @@ class Board{
         this.players[this.playersTurn].pieces.forEach(piece =>{
             var mouseTransPosX = mouseX-(width/2 - this.halfBoard + this.halfSpace);
             var mouseTransPosY = mouseY-(height/2-this.halfBoard + this.halfSpace);
-            if (mouseTransPosX > pon.x*this.spacing-this.halfSpace && mouseTransPosY > pon.y*this.spacing-this.halfSpace && mouseTransPosX < pon.x*this.spacing+this.halfSpace && mouseTransPosY < pon.y*this.spacing+this.halfSpace){
+            if (mouseTransPosX > piece.x*this.spacing-this.halfSpace && mouseTransPosY > piece.y*this.spacing-this.halfSpace && mouseTransPosX < piece.x*this.spacing+this.halfSpace && mouseTransPosY < piece.y*this.spacing+this.halfSpace){
                 if (mouseIsPressed){
+                    this.deSelectAllPieces();
                     piece.isSelected = true;
                 }
             }
+        });
+    }
+
+    deSelectAllPieces(){
+        this.players.forEach(pl => {
+            pl.pieces.forEach(pie =>{
+                pie.isSelected = false;
+            })
         });
     }
 }
