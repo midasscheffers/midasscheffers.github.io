@@ -158,11 +158,11 @@ class Board{
 
     CheckForSelected(){
         this.players[this.playersTurn].pieces.forEach(piece =>{
-            var mouseTransPosX = mouseX-(width/2 - halfBoard + halfSpace);
-            var mouseTransPosY = mouseY-(height/2-halfBoard + halfSpace);
-            if (mouseTransPosX > pon.x*spacing-halfSpace && mouseTransPosY > pon.y*spacing-halfSpace && mouseTransPosX < pon.x*spacing+halfSpace && mouseTransPosY < pon.y*spacing+halfSpace){
+            var mouseTransPosX = mouseX-(width/2 - this.halfBoard + this.halfSpace);
+            var mouseTransPosY = mouseY-(height/2-this.halfBoard + this.halfSpace);
+            if (mouseTransPosX > pon.x*this.spacing-this.halfSpace && mouseTransPosY > pon.y*this.spacing-this.halfSpace && mouseTransPosX < pon.x*this.spacing+this.halfSpace && mouseTransPosY < pon.y*this.spacing+this.halfSpace){
                 if (mouseIsPressed){
-                piece.isSelected = true;
+                    piece.isSelected = true;
                 }
             }
         });
