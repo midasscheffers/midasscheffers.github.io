@@ -22,7 +22,7 @@ class Piece {
     rectMode(CORNER)
     for(var i = 0; i < this.moveSqueres.length; i++){
       fill([0,0,0,50])
-      ellips(this.moveSqueres[0]*spacing-halfBoard+spacing, this.moveSqueres[1]*spacing-halfBoard+spacing, halfSpace, halfSpace)
+      ellipse(this.moveSqueres[0]*spacing-halfBoard+spacing, this.moveSqueres[1]*spacing-halfBoard+spacing, halfSpace, halfSpace);
     }
   }
   CheckMoveSqueres(boardState){
