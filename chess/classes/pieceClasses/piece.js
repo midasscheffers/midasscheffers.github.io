@@ -50,6 +50,7 @@ class Piece {
   }
 
   isUpperCase(str) {
-    return str === str.toUpperCase();
+    upper = str.toUpperCase();
+    return str === upper;
  }
 }
