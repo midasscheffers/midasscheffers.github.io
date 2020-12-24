@@ -172,6 +172,7 @@ class Board{
             if (mouseTransPosX > piece.x*this.spacing-this.halfSpace && mouseTransPosY > piece.y*this.spacing-this.halfSpace && mouseTransPosX < piece.x*this.spacing+this.halfSpace && mouseTransPosY < piece.y*this.spacing+this.halfSpace){
                 if (mouseIsPressed){
                     this.deSelectAllPieces();
+                    piece.CheckMoveSqueres(this.boardStateArray);
                     piece.isSelected = true;
                 }
             }

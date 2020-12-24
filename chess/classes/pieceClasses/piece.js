@@ -14,7 +14,7 @@ class Piece {
     }
     return false;
   }
-  
+
   blitSelected(spacing, halfBoard, halfSpace, selection_color){
     rectMode(CENTER);
     fill(selection_color)
@@ -24,5 +24,8 @@ class Piece {
       fill([0,0,0,50])
       ellips(this.moveSqueres[0]*spacing-halfBoard+spacing, this.moveSqueres[1]*spacing-halfBoard+spacing, halfSpace, halfSpace)
     }
+  }
+  CheckMoveSqueres(boardState){
+    return false;
   }
 }
