@@ -29,16 +29,16 @@ class Pon extends Piece{
     var sq_up = boardState[this.y+this.dir][this.x];
     if (sq_up == "-" && this.cordOnBoard(this.x, this.y+this.dir)){
       moveSqueres.push([this.x, this.y+this.dir])
-      t_sq_up = boardState[this.y+this.dir*2][this.x];
+      var t_sq_up = boardState[this.y+this.dir*2][this.x];
       if (this.firstMove && t_sq_up == "-"){
         moveSqueres.push([this.x, y+this.dir*2]);
       }
     }
-    sq_dig_left = boardState[this.y+this.dir][this.x-1]
+    var sq_dig_left = boardState[this.y+this.dir][this.x-1]
     if (sq_dig_left != "-" && this.cordOnBoard(this.x-1, this.y+dir)){
       moveSqueres.push([this.x-1, this.y+dir]);
     }
-    sq_dig_right = boardState[this.y+this.dir][this.x+1]
+    var sq_dig_right = boardState[this.y+this.dir][this.x+1]
     if (sq_dig_left != "-" && this.cordOnBoard(this.x+1, this.y+dir)){
       moveSqueres.push([this.x+1, this.y+dir]);
     }
