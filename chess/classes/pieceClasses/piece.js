@@ -49,8 +49,8 @@ class Piece {
     }
   }
 
-  isUpperCase(str) {
-    upper = str.toUpperCase();
-    return str === upper;
+  isUpperCase(char) {
+    upper = char.toUpperCase();
+    return char == upper;
  }
 }
