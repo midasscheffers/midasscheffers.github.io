@@ -83,6 +83,7 @@ class Board{
         this.halfMoves = Math.round(cutFEN[3]);
         this.fullMoves = Math.round(cutFEN[4]);
         var boardState = cutFEN[0].split("/");
+        this.boardStateArray = [];
         for (var y = 0; y < boardState.length; y++){
             var line = boardState[y].split("");
             var xIncrement = 0;
