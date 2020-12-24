@@ -16,6 +16,7 @@ class Board{
         this.fullMoves = 0;
         this.halfMoves = 0;
         this.moves = [];
+        this.boardStateArray = []
     }
 
     setUpBoard(){
@@ -31,6 +32,7 @@ class Board{
         if (this.playersTurn >= this.players.length){
             this.playersTurn = 0;
         }
+        this.deSelectAllPieces();
     }
 
     blit(){
@@ -84,15 +86,21 @@ class Board{
         for (var y = 0; y < boardState.length; y++){
             var line = boardState[y].split("");
             var xIncrement = 0;
+            var arrayLine = [];
             for (var i = 0; i < line.length; i++){
                 if (Number.isInteger(parseInt(line[i]))){
                     xIncrement += Math.round(line[i]);
+                    for (var j = 0; j < Math.round(line[i]); j ++){
+                        arrayLine.push("-");
+                    }
                 }
                 else{
                     this.placePiece(xIncrement, y, line[i])
+                    arrayLine.push(line[i]);
                     xIncrement ++;
                 }
             }
+            this.boardStateArray.push(arrayLine);
 
         }
         this.loadPieceImages();
