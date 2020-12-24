@@ -10,7 +10,7 @@ class Pon extends Piece{
     this.enpassent_squere = '';
   }
 
-  blit(spacing, halfBoard, halfSpace){
+  blit(spacing, halfBoard, halfSpace, selection_color){
     if (this.isSelected){
       rectMode(CENTER);
       fill(selection_color)

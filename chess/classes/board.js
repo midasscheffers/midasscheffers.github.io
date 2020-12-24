@@ -50,7 +50,7 @@ class Board{
     blitPieces(){
         this.players.forEach(player => {
             player.pieces.forEach(p => {
-                p.blit(this.spacing, this.halfBoard, this.halfSpace);
+                p.blit(this.spacing, this.halfBoard, this.halfSpace, this.selection_color);
             });
         });
     }

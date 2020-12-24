@@ -6,7 +6,7 @@ class Bishop extends Piece{
     this.points = 3;
   }
 
-  blit(spacing, halfBoard, halfSpace){
+  blit(spacing, halfBoard, halfSpace, selection_color){
     if (this.isSelected){
       rectMode(CENTER);
       fill(selection_color)
