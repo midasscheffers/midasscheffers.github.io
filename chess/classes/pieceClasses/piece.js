@@ -25,7 +25,31 @@ class Piece {
       ellipse(this.moveSqueres[i][0]*spacing-halfBoard+spacing, this.moveSqueres[i][1]*spacing-halfBoard+spacing, halfSpace, halfSpace);
     }
   }
+
   CheckMoveSqueres(boardState){
     return false;
   }
+
+  charIsOppColor(char){
+    if (this.color == "white"){
+      if (this.isUpperCase(char)){
+        return false
+      }
+      else{
+        return true
+      }
+    }
+    else{
+      if (!this.isUpperCase(char)){
+        return false
+      }
+      else{
+        return true
+      }
+    }
+  }
+
+  isUpperCase(str) {
+    return str === str.toUpperCase();
+ }
 }
