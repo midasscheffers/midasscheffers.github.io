@@ -31,7 +31,7 @@ class Pon extends Piece{
       moveSqueres.push([this.x, this.y+this.dir])
       var t_sq_up = boardState[this.y+this.dir*2][this.x];
       if (this.firstMove && t_sq_up == "-"){
-        moveSqueres.push([this.x, y+this.dir*2]);
+        moveSqueres.push([this.x, this.y+this.dir*2]);
       }
     }
     var sq_dig_left = boardState[this.y+this.dir][this.x-1]
