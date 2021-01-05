@@ -188,11 +188,11 @@ class Board{
             this.selectedPiece.moveSqueres.forEach(spot => {
                 if (mouseTransPosX > spot[0]*this.spacing-this.halfSpace && mouseTransPosY > spot[1]*this.spacing-this.halfSpace && mouseTransPosX < spot[0]*this.spacing+this.halfSpace && mouseTransPosY < spot[1]*this.spacing+this.halfSpace){
                     if (mouseIsPressed){
-                        this.selectedPiece.x = spot[0];
-                        this.selectedPiece.y = spot[1];
-                        temp_char = this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x];
+                        var temp_char = this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x];
                         this.boardStateArray[spot[1]][spot[0]] = temp_char;
                         this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x] = "-";
+                        this.selectedPiece.x = spot[0];
+                        this.selectedPiece.y = spot[1];
                         this.rotateTurn();
                     }
                 }
