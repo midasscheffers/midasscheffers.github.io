@@ -190,9 +190,19 @@ class Board{
                     if (mouseIsPressed){
                         var temp_char = this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x];
                         this.boardStateArray[spot[1]][spot[0]] = temp_char;
+                        if (this.boardStateArray[spot[1]][spot[0]] != "-"){
+                            var kill_piece = this.getPiceByXY(spot[0], spot[1]);
+                            if (this.selectedPiece.color == "white"){
+                                this.players[0].pieces.splice(myArray.indexOf(kill_piece), 1);
+                            }
+                            else if (this.selectedPiece.color == "black"){
+                                this.players[1].pieces.splice(myArray.indexOf(kill_piece), 1);
+                            }
+                        }
                         this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x] = "-";
                         this.selectedPiece.x = spot[0];
                         this.selectedPiece.y = spot[1];
+
                         this.rotateTurn();
                     }
                 }
@@ -207,5 +217,16 @@ class Board{
             })
         });
         this.selectedPiece = "";
+    }
+
+    getPiceByXY(x, y){
+        var char = this.boardStateArray[y][x];
+        if (char.toUpperCase() == char){
+            this.players[0].pieces.forEach(p =>{
+                if (p.x == x && p.y == y){
+                    return p;
+                }
+            });
+        }
     }
 }
