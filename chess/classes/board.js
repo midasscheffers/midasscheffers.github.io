@@ -189,9 +189,11 @@ class Board{
                 if (mouseTransPosX > spot[0]*this.spacing-this.halfSpace && mouseTransPosY > spot[1]*this.spacing-this.halfSpace && mouseTransPosX < spot[0]*this.spacing+this.halfSpace && mouseTransPosY < spot[1]*this.spacing+this.halfSpace){
                     if (mouseIsPressed){
                         var temp_char = this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x];
-                        this.boardStateArray[spot[1]][spot[0]] = temp_char;
                         var kill_piece = this.getPiceByXY(spot[0], spot[1]);
-                        this.removePiece(kill_piece);
+                        if (this.boardStateArray[spot[1]][spot[0]] != "-"){
+                            this.removePiece(kill_piece);
+                        }
+                        this.boardStateArray[spot[1]][spot[0]] = temp_char;
                         this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x] = "-";
                         this.selectedPiece.x = spot[0];
                         this.selectedPiece.y = spot[1];
