@@ -213,14 +213,13 @@ class Board{
     }
 
     getPiceByXY(x, y){
-        var char = this.boardStateArray[y][x];
-        if (char.toUpperCase() == char){
-            this.players[0].pieces.forEach(p =>{
-                if (p.x == x && p.y == y){
-                    return p;
+        this.players.forEach(pl => {
+            pl.pieces.forEach(pie =>{
+                if (pie.x == x && pie.y == y){
+                    return pie;
                 }
             });
-        }
+        });
     }
 
     removePiece(p){
