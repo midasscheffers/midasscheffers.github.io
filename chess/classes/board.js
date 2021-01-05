@@ -187,9 +187,11 @@ class Board{
             var mouseTransPosY = mouseY-(height/2-this.halfBoard + this.halfSpace);
             this.selectedPiece.moveSqueres.forEach(spot => {
                 if (mouseTransPosX > spot[0]*this.spacing-this.halfSpace && mouseTransPosY > spot[1]*this.spacing-this.halfSpace && mouseTransPosX < spot[0]*this.spacing+this.halfSpace && mouseTransPosY < spot[1]*this.spacing+this.halfSpace){
-                    this.selectedPiece.x = spot[0];
-                    this.selectedPiece.y = spot[1];
-                    this.rotateTurn();
+                    if (mouseIsPressed){
+                        this.selectedPiece.x = spot[0];
+                        this.selectedPiece.y = spot[1];
+                        this.rotateTurn();
+                    }
                 }
             });
         }
