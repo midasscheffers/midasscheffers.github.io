@@ -17,6 +17,7 @@ class Board{
         this.halfMoves = 0;
         this.moves = [];
         this.boardStateArray = []
+        this.selectedPiece = "";
     }
 
     setUpBoard(){
@@ -174,7 +175,20 @@ class Board{
                     this.deSelectAllPieces();
                     piece.CheckMoveSqueres(this.boardStateArray);
                     piece.isSelected = true;
+                    this.selectedPiece = piece;
                 }
+            }
+        });
+    }
+
+    CheckForMove(){
+        var mouseTransPosX = mouseX-(width/2 - this.halfBoard + this.halfSpace);
+        var mouseTransPosY = mouseY-(height/2-this.halfBoard + this.halfSpace);
+        this.selectedPiece.moveSqueres.forEach(spot => {
+            if (mouseTransPosX > spot[0]*this.spacing-this.halfSpace && mouseTransPosY > spot[1]*this.spacing-this.halfSpace && mouseTransPosX < spot[0]*this.spacing+this.halfSpace && mouseTransPosY < spot[1]*this.spacing+this.halfSpace){
+                this.selectedPiece.x = spot[0];
+                this.selectedPiece.y = spot[1];
+                this.rotateTurn();
             }
         });
     }
