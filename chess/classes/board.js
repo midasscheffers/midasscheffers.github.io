@@ -167,18 +167,20 @@ class Board{
     }
 
     CheckForSelected(){
-        this.players[this.playersTurn].pieces.forEach(piece =>{
-            var mouseTransPosX = mouseX-(width/2 - this.halfBoard + this.halfSpace);
-            var mouseTransPosY = mouseY-(height/2-this.halfBoard + this.halfSpace);
-            if (mouseTransPosX > piece.x*this.spacing-this.halfSpace && mouseTransPosY > piece.y*this.spacing-this.halfSpace && mouseTransPosX < piece.x*this.spacing+this.halfSpace && mouseTransPosY < piece.y*this.spacing+this.halfSpace){
-                if (mouseIsPressed){
-                    this.deSelectAllPieces();
-                    piece.CheckMoveSqueres(this.boardStateArray);
-                    piece.isSelected = true;
-                    this.selectedPiece = piece;
+        if (this.selectedPiece != ""){
+            this.players[this.playersTurn].pieces.forEach(piece =>{
+                var mouseTransPosX = mouseX-(width/2 - this.halfBoard + this.halfSpace);
+                var mouseTransPosY = mouseY-(height/2-this.halfBoard + this.halfSpace);
+                if (mouseTransPosX > piece.x*this.spacing-this.halfSpace && mouseTransPosY > piece.y*this.spacing-this.halfSpace && mouseTransPosX < piece.x*this.spacing+this.halfSpace && mouseTransPosY < piece.y*this.spacing+this.halfSpace){
+                    if (mouseIsPressed){
+                        this.deSelectAllPieces();
+                        piece.CheckMoveSqueres(this.boardStateArray);
+                        piece.isSelected = true;
+                        this.selectedPiece = piece;
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
     CheckForMove(){
@@ -199,5 +201,6 @@ class Board{
                 pie.isSelected = false;
             })
         });
+        this.selectedPiece = "";
     }
 }
