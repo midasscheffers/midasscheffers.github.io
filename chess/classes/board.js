@@ -167,32 +167,32 @@ class Board{
     }
 
     CheckForSelected(){
-        if (this.selectedPiece != ""){
-            this.players[this.playersTurn].pieces.forEach(piece =>{
-                var mouseTransPosX = mouseX-(width/2 - this.halfBoard + this.halfSpace);
-                var mouseTransPosY = mouseY-(height/2-this.halfBoard + this.halfSpace);
-                if (mouseTransPosX > piece.x*this.spacing-this.halfSpace && mouseTransPosY > piece.y*this.spacing-this.halfSpace && mouseTransPosX < piece.x*this.spacing+this.halfSpace && mouseTransPosY < piece.y*this.spacing+this.halfSpace){
-                    if (mouseIsPressed){
-                        this.deSelectAllPieces();
-                        piece.CheckMoveSqueres(this.boardStateArray);
-                        piece.isSelected = true;
-                        this.selectedPiece = piece;
-                    }
+        this.players[this.playersTurn].pieces.forEach(piece =>{
+            var mouseTransPosX = mouseX-(width/2 - this.halfBoard + this.halfSpace);
+            var mouseTransPosY = mouseY-(height/2-this.halfBoard + this.halfSpace);
+            if (mouseTransPosX > piece.x*this.spacing-this.halfSpace && mouseTransPosY > piece.y*this.spacing-this.halfSpace && mouseTransPosX < piece.x*this.spacing+this.halfSpace && mouseTransPosY < piece.y*this.spacing+this.halfSpace){
+                if (mouseIsPressed){
+                    this.deSelectAllPieces();
+                    piece.CheckMoveSqueres(this.boardStateArray);
+                    piece.isSelected = true;
+                    this.selectedPiece = piece;
                 }
-            });
-        }
+            }
+        });
     }
 
     CheckForMove(){
-        var mouseTransPosX = mouseX-(width/2 - this.halfBoard + this.halfSpace);
-        var mouseTransPosY = mouseY-(height/2-this.halfBoard + this.halfSpace);
-        this.selectedPiece.moveSqueres.forEach(spot => {
-            if (mouseTransPosX > spot[0]*this.spacing-this.halfSpace && mouseTransPosY > spot[1]*this.spacing-this.halfSpace && mouseTransPosX < spot[0]*this.spacing+this.halfSpace && mouseTransPosY < spot[1]*this.spacing+this.halfSpace){
-                this.selectedPiece.x = spot[0];
-                this.selectedPiece.y = spot[1];
-                this.rotateTurn();
-            }
-        });
+        if (this.selectedPiece != ""){
+            var mouseTransPosX = mouseX-(width/2 - this.halfBoard + this.halfSpace);
+            var mouseTransPosY = mouseY-(height/2-this.halfBoard + this.halfSpace);
+            this.selectedPiece.moveSqueres.forEach(spot => {
+                if (mouseTransPosX > spot[0]*this.spacing-this.halfSpace && mouseTransPosY > spot[1]*this.spacing-this.halfSpace && mouseTransPosX < spot[0]*this.spacing+this.halfSpace && mouseTransPosY < spot[1]*this.spacing+this.halfSpace){
+                    this.selectedPiece.x = spot[0];
+                    this.selectedPiece.y = spot[1];
+                    this.rotateTurn();
+                }
+            });
+        }
     }
 
     deSelectAllPieces(){
