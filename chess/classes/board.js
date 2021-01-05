@@ -190,6 +190,9 @@ class Board{
                     if (mouseIsPressed){
                         this.selectedPiece.x = spot[0];
                         this.selectedPiece.y = spot[1];
+                        temp_char = this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x];
+                        this.boardStateArray[spot[1]][spot[0]] = temp_char;
+                        this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x] = "-";
                         this.rotateTurn();
                     }
                 }

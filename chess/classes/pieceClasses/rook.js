@@ -3,6 +3,7 @@ class Rook extends Piece{
   constructor(x, y, color) {
     super(x,y, color)
     this.piece = "rook";
+    this.piece_char = "r"
     this.points = 5;
   }
 

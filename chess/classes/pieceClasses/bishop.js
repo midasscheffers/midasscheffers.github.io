@@ -3,6 +3,7 @@ class Bishop extends Piece{
   constructor(x, y, color) {
     super(x,y, color)
     this.piece = "bishop";
+    this.piece_char = "b"
     this.points = 3;
   }
 

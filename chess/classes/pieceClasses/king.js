@@ -3,6 +3,7 @@ class King extends Piece{
   constructor(x, y, color) {
     super(x,y, color)
     this.piece = "king";
+    this.piece_char = "k"
     this.points = 0;
   }
 

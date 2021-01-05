@@ -3,6 +3,7 @@ class Knight extends Piece{
   constructor(x, y, color) {
     super(x,y, color)
     this.piece = "knight";
+    this.piece_char = "n"
     this.points = 3;
   }
 

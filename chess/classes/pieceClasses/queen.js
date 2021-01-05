@@ -3,6 +3,7 @@ class Queen extends Piece{
   constructor(x, y, color) {
     super(x,y, color)
     this.piece = "queen";
+    this.piece_char = "q"
     this.points = 9;
   }
 
