@@ -226,7 +226,9 @@ class Board{
 
     removePiece(p){
         this.players.forEach(pl => {
-            pl.pieces.splice(pl.pieces.indexOf(p), 1);
+            if (pl.pieces.includes(p)){
+                pl.pieces.splice(pl.pieces.indexOf(p), 1);
+            }
         });
     }
 }
