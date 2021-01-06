@@ -189,7 +189,7 @@ class Board{
                 if (mouseTransPosX > spot[0]*this.spacing-this.halfSpace && mouseTransPosY > spot[1]*this.spacing-this.halfSpace && mouseTransPosX < spot[0]*this.spacing+this.halfSpace && mouseTransPosY < spot[1]*this.spacing+this.halfSpace){
                     if (mouseIsPressed){
                         var temp_char = this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x];
-                        var kill_piece = this.getPiceByXY(spot[0], spot[1]);
+                        var kill_piece = this.getPieceByXY(spot[0], spot[1]);
                         if (this.boardStateArray[spot[1]][spot[0]] != "-"){
                             this.removePiece(kill_piece);
                         }
@@ -214,14 +214,17 @@ class Board{
         this.selectedPiece = "";
     }
 
-    getPiceByXY(x, y){
+    getPieceByXY(x, y){
+        var temp_piece = '';
         this.players.forEach(pl => {
             pl.pieces.forEach(pie =>{
                 if (pie.x == x && pie.y == y){
-                    return pie;
+                    console.log(pie.piece, pie.color)
+                    temp_piece = pie;
                 }
             });
         });
+        return temp_piece;
     }
 
     removePiece(p){
