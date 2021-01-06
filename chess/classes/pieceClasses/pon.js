@@ -26,21 +26,29 @@ class Pon extends Piece{
 
   CheckMoveSqueres(boardState){
     var moveSqueres = [];
-    var sq_up = boardState[this.y+this.dir][this.x];
-    if (sq_up == "-" && this.cordOnBoard(this.x, this.y+this.dir)){
-      moveSqueres.push([this.x, this.y+this.dir])
-      var t_sq_up = boardState[this.y+this.dir*2][this.x];
-      if (this.firstMove && t_sq_up == "-"){
-        moveSqueres.push([this.x, this.y+this.dir*2]);
+    if (this.cordOnBoard(this.x, this.y+this.dir)){
+      var sq_up = boardState[this.y+this.dir][this.x];
+      if (sq_up == "-" && this.cordOnBoard(this.x, this.y+this.dir)){
+        moveSqueres.push([this.x, this.y+this.dir])
+        if (this.cordOnBoard(this.x, this.y+this.dir*2)){
+          var t_sq_up = boardState[this.y+this.dir*2][this.x];
+          if (this.firstMove && t_sq_up == "-"){
+            moveSqueres.push([this.x, this.y+this.dir*2]);
+          }
+        }
       }
     }
-    var sq_dig_left = boardState[this.y+this.dir][this.x-1]
-    if (sq_dig_left != "-" && this.cordOnBoard(this.x-1, this.y+this.dir) && this.charIsOppColor(sq_dig_left)){
-      moveSqueres.push([this.x-1, this.y+this.dir]);
+    if (this.cordOnBoard(this.x-1, this.y+this.dir)){
+      var sq_dig_left = boardState[this.y+this.dir][this.x-1]
+      if (sq_dig_left != "-" && this.charIsOppColor(sq_dig_left)){
+        moveSqueres.push([this.x-1, this.y+this.dir]);
+      }
     }
-    var sq_dig_right = boardState[this.y+this.dir][this.x+1]
-    if (sq_dig_right != "-" && this.cordOnBoard(this.x+1, this.y+this.dir) && this.charIsOppColor(sq_dig_right)){
-      moveSqueres.push([this.x+1, this.y+this.dir]);
+    if (this.cordOnBoard(this.x+1, this.y+this.dir)){
+      var sq_dig_right = boardState[this.y+this.dir][this.x+1]
+      if (sq_dig_right != "-" && this.charIsOppColor(sq_dig_right)){
+        moveSqueres.push([this.x+1, this.y+this.dir]);
+      }
     }
     this.moveSqueres = moveSqueres;
     return moveSqueres
