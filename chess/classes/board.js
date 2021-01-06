@@ -197,7 +197,9 @@ class Board{
                         this.boardStateArray[this.selectedPiece.y][this.selectedPiece.x] = "-";
                         this.selectedPiece.x = spot[0];
                         this.selectedPiece.y = spot[1];
-
+                        if (this.selectedPiece.piece == "pon"){
+                            this.selectedPiece.firstMove = false;
+                        }
                         this.rotateTurn();
                     }
                 }
