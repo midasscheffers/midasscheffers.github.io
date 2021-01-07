@@ -19,15 +19,15 @@ class Bishop extends Piece{
     var moveSqueres = [];
     for (let dir_y = -1; dir_y < 2; dir_y ++){
       for (let dir_x = -1; dir_x < 2; dir_x ++){
-        if(dir_x != 0 || dir_y != 0){
+        if(dir_x != 0 && dir_y != 0){
           let inc = 1;
-          if (this.cordOnBoard(inc*dir_x, inc*dir_y)){
-            let pos_char = boardState[inc*dir_y][inc*dir_x];
-            while (this.cordOnBoard(inc*dir_x, inc*dir_y) && (this.charIsOppColor(pos_char) || pos_char == "-")){
+          if (this.cordOnBoard(this.x+inc*dir_x, this.y+inc*dir_y)){
+            let pos_char = boardState[this.y+inc*dir_y][this.x+inc*dir_x];
+            while ((this.cordOnBoard(this.x+inc*dir_x, this.y+inc*dir_y)) && (this.charIsOppColor(pos_char) || pos_char == "-")){
               moveSqueres.push([this.x+inc*dir_x, this.y+inc*dir_y]);
               inc ++;
-              if (this.cordOnBoard(inc*dir_x, inc*dir_y)){
-                pos_char = boardState[inc*dir_y][inc*dir_x];
+              if (this.cordOnBoard(this.x+inc*dir_x, this.y+inc*dir_y)){
+                pos_char = boardState[this.y+inc*dir_y][this.x+inc*dir_x];
               }
             }
           }
