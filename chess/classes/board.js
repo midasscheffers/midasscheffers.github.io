@@ -221,7 +221,6 @@ class Board{
         this.players.forEach(pl => {
             pl.pieces.forEach(pie =>{
                 if (pie.x == x && pie.y == y){
-                    console.log(pie.piece, pie.color)
                     temp_piece = pie;
                 }
             });
