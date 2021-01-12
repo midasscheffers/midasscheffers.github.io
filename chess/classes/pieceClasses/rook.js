@@ -25,7 +25,7 @@ class Rook extends Piece{
             let pos_char = boardState[this.y+inc*dir_y][this.x+inc*dir_x];
             while ((this.cordOnBoard(this.x+inc*dir_x, this.y+inc*dir_y)) && (this.charIsOppColor(pos_char) || pos_char == "-")){
               moveSqueres.push([this.x+inc*dir_x, this.y+inc*dir_y]);
-              if(this.charIsOppColor(pos_char)){
+              if(this.charIsOppColor(pos_char) && pos_char != "-"){
                 break;
               }
               inc ++;
