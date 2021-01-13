@@ -9,6 +9,10 @@ class Board{
         this.halfSpace = this.spacing/2;
         this.brown = [109,60,52];
         this.light = [205,158,116];
+        // other color scheme
+        this.brown = [186,85,70];
+        this.light = [240,216,191];
+        
         this.boardColors = [this.light, this.brown]
         this.selection_color = [240, 229, 144, 130];
         this.strokeSize = 3;
