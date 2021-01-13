@@ -63,9 +63,11 @@ class Board{
             player.pieces.forEach(p => {
                 console.log("Images/" + p.color + "_" + p.piece + ".png");
                 p.image = loadImage("Images/" + p.color + "_" + p.piece + ".png");
+                p.image = loadImage('https://images.chesscomfiles.com/chess-themes/pieces/condal/150/' + p.color[1] + p.piece_char +'.png')
             });
         });
     }
+    //  'https://images.chesscomfiles.com/chess-themes/pieces/condal/150/wb.png'
 
     //checks for checks and mates and pats
     loadFEN(FEN){
