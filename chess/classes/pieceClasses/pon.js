@@ -4,6 +4,7 @@ class Pon extends Piece{
     super(x,y, color)
     this.piece = "pon";
     this.image = '';
+    this.piece_char = "p"
     this.points = 1;
     this.side = side;
     if (this.side == "top"){
