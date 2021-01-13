@@ -25,12 +25,6 @@ class King extends Piece{
             let pos_char = boardState[this.y+inc*dir_y][this.x+inc*dir_x];
             if ((this.cordOnBoard(this.x+inc*dir_x, this.y+inc*dir_y)) && (this.charIsOppColor(pos_char) || pos_char == "-")){
               moveSqueres.push([this.x+inc*dir_x, this.y+inc*dir_y]);
-              if(this.charIsOppColor(pos_char) && pos_char != "-"){
-                break;
-              }
-              if (this.cordOnBoard(this.x+inc*dir_x, this.y+inc*dir_y)){
-                pos_char = boardState[this.y+inc*dir_y][this.x+inc*dir_x];
-              }
             }
           }
         }
