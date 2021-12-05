@@ -67,7 +67,7 @@ class Board{
             player.pieces.forEach(p => {
                 console.log("Images/" + p.color + "_" + p.piece + ".png");
                 p.image = loadImage("Images/" + p.color + "_" + p.piece + ".png");
-                p.image = loadImage('https://images.chesscomfiles.com/chess-themes/pieces/condal/150/' + p.color[0] + p.piece_char +'.png')
+                // p.image = loadImage('https://images.chesscomfiles.com/chess-themes/pieces/condal/150/' + p.color[0] + p.piece_char +'.png')
             });
         });
     }
@@ -239,6 +239,19 @@ class Board{
             if (pl.pieces.includes(p)){
                 pl.pieces.splice(pl.pieces.indexOf(p), 1);
             }
+        });
+    }
+
+    checkEnemMoveSqueres(){
+        this.players.forEach(pl => {
+            let temp_enem_moves = [];
+            this.players[1-this.players.indexOff(pl)].pieces.forEach(p => {
+                line = p.CheckMoveSqueres(this.boardStateArray);
+                line.forEach(i => {
+                    temp_enem_moves.push(i);
+                })
+            });
+            pl.enem_move_squeres = temp_enem_moves;
         });
     }
 }
