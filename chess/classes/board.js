@@ -115,7 +115,7 @@ class Board{
     }
 
     getFEN(){
-        var FEN = ""
+        var FEN = this.boardState
         return FEN
     }
 
@@ -180,6 +180,7 @@ class Board{
                 if (mouseIsPressed){
                     this.deSelectAllPieces();
                     piece.CheckMoveSqueres(this.boardStateArray);
+                    movesAreLegal(piece)
                     piece.isSelected = true;
                     this.selectedPiece = piece;
                 }
@@ -254,4 +255,19 @@ class Board{
             pl.enem_move_squeres = temp_enem_moves;
         });
     }
+
+    movesAreLegal(piece){
+        legal_moves = []
+        piece.moveSqueres.forEach(mv => {
+            temp_board = new Board();
+            temp_board.loadFEN(this.getFEN())
+            // do move
+            //check if king is in danger
+                //check all enemy moves
+                //is king on one of those squares
+            //append move if legal
+        });
+        piece.moveSqueres = legal_moves
+    }
+
 }
