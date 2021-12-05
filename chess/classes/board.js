@@ -115,7 +115,19 @@ class Board{
     }
 
     getFEN(){
-        var FEN = this.boardState
+        var FEN = ''
+        board = this.boardStateArray
+        board.forEach(ln => {
+            ln.forEach(p => {
+                if (p != "-"){
+                    FEN += p
+                }
+                else {
+                    FEN += "1"
+                }
+            });
+        });
+        
         return FEN
     }
 
@@ -180,7 +192,7 @@ class Board{
                 if (mouseIsPressed){
                     this.deSelectAllPieces();
                     piece.CheckMoveSqueres(this.boardStateArray);
-                    movesAreLegal(piece)
+                    // movesAreLegal(piece)
                     piece.isSelected = true;
                     this.selectedPiece = piece;
                 }
