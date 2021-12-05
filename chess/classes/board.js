@@ -115,19 +115,20 @@ class Board{
     }
 
     getFEN(){
-        var FEN = ''
-        board = this.boardStateArray
+        var FEN = '';
+        var board = this.boardStateArray;
         board.forEach(ln => {
             ln.forEach(p => {
                 if (p != "-"){
-                    FEN += p
+                    FEN += p;
                 }
                 else {
-                    FEN += "1"
+                    FEN += "1";
                 }
             });
+            FEN += "/";
         });
-        
+        FEN += " " + 
         return FEN
     }
 
