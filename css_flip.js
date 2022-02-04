@@ -2,7 +2,7 @@ if (localStorage.css_state_is_old == undefined){
 	localStorage.css_state_is_old = true;
 }
 
-var is_old = localStorage.css_state_is_old == "true";
+var is_old = localStorage.css_state_is_old == true;
 
 var old_css_tag = "<link rel='stylesheet' type='text/css' href='css/style.css' id='css_link'>"
 var new_css_tag = "<link rel='stylesheet' type='text/css' href='css/new_style.css' id='css_link'>"
