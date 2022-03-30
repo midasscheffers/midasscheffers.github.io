@@ -46,10 +46,23 @@ body{
     background: linear-gradient(45deg, var(--middle) 0%, var(--dark) 100%);
 }
 
+#down_arrow{
+    position: absolute;
+    /* margin: 50% auto; */
+    top:0px; left:0px;
+    width: 10vw;
+    transform: translate(50vw, 90vh);
+    mix-blend-mode:color-dodge;
+}
+
 @media (min-width: 60rem){
     body{
         display: flex;
         justify-content: center;
+    }
+
+    #down_arrow{
+        display: none;
     }
 }
 
@@ -117,6 +130,9 @@ article{
     border-width: 1px;
     border-radius: 6px; */
     padding: 1em;
+    border-style: none none solid none;
+    border-bottom-color: var(--middle);
+    border-bottom-width: 1px;
 }
 
 
@@ -216,3 +232,14 @@ middle h2{
     clear: both;
     display: table;
   }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
